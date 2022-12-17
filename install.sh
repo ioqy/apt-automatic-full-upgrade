@@ -10,7 +10,8 @@ systemctl disable --now apt-automatic-full-upgrade.timer 2>/dev/null
 cat << EOF > /etc/systemd/system/apt-automatic-full-upgrade.service
 [Unit]
 Description=Auto upgrade all apt packages
-After=network.target
+After=network-online.target
+Wants=network-online.target
 [Service]
 Type=oneshot
 User=root
