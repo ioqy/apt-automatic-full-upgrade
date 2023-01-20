@@ -5,6 +5,10 @@ if [ "$(whoami)" != "root" ]; then
   exit 1
 fi
 
+if [ -e "/usr/local/bin/uninstall-apt-automatic-full-upgrade.sh" ]; then
+  /usr/local/bin/uninstall-apt-automatic-full-upgrade.sh
+fi
+
 systemctl disable --now apt-automatic-full-upgrade.timer 2>/dev/null
 
 cat << EOF > /etc/systemd/system/apt-automatic-full-upgrade.service
