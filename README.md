@@ -10,7 +10,7 @@ curl -fsSL https://raw.githubusercontent.com/ioqy/apt-automatic-full-upgrade/mas
 or
 
 ```bash
-wget -q -O - https://raw.githubusercontent.com/ioqy/apt-automatic-full-upgrade/master/install.sh | sudo sh
+wget -q -O- https://raw.githubusercontent.com/ioqy/apt-automatic-full-upgrade/master/install.sh | sudo sh
 ```
 
 ## Uninstall
