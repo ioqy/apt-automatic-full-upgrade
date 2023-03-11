@@ -7,6 +7,12 @@
 curl -fsSL https://raw.githubusercontent.com/ioqy/apt-automatic-full-upgrade/master/install.sh | sudo sh
 ```
 
+or
+
+```bash
+wget -q -O - https://raw.githubusercontent.com/ioqy/apt-automatic-full-upgrade/master/install.sh | sudo sh
+```
+
 ## Uninstall
 
 ```bash
