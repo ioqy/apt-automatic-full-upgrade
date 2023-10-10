@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 if [ "$(whoami)" != "root" ]; then
   echo Script must be run as root
@@ -18,7 +18,6 @@ After=network-online.target
 Wants=network-online.target
 [Service]
 Type=oneshot
-User=root
 ExecStart=apt-get update --yes --quiet=2
 ExecStart=apt-get full-upgrade --yes --quiet
 ExecStart=apt-get dist-upgrade --yes --quiet
@@ -39,7 +38,7 @@ WantedBy=timers.target
 EOF
 
 cat << EOF > /usr/local/bin/uninstall-apt-automatic-full-upgrade.sh
-#!/bin/sh
+#!/usr/bin/env sh
 if [ "\$(whoami)" != "root" ]; then
   echo Script must be run as root
   exit 1
