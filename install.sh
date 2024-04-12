@@ -18,9 +18,9 @@ After=network-online.target
 Wants=network-online.target
 [Service]
 Type=oneshot
-ExecStart=apt-get update --yes --quiet=2
-ExecStart=apt-get full-upgrade --yes --quiet
-ExecStart=apt-get dist-upgrade --yes --quiet
+ExecStart=apt-get update --yes --quiet=2 -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
+ExecStart=apt-get full-upgrade --yes --quiet -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
+ExecStart=apt-get dist-upgrade --yes --quiet -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
 ExecStart=apt-get autoremove --yes --quiet
 ExecStart=apt-get clean --yes --quiet=2
 ExecStart=apt-get autoclean --yes --quiet=2
